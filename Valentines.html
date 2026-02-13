@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Dear Wifeyyy Sudarshhh ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ff4e8a, #ff99ac, #ffc2d1);
+    overflow-x: hidden;
+}
+
+/* Falling Hearts */
+.heart {
+    position: absolute;
+    top: -20px;
+    color: rgba(255,255,255,0.8);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+/* Container */
+.container {
+    text-align: center;
+    width: 92%;
+    max-width: 380px;
+}
+
+/* Envelope */
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: #ff6f91;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* Flap */
+.flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff3e6c;
+    clip-path: polygon(0 0, 50% 70%, 100% 0);
+    transform-origin: top;
+    transition: transform 1s ease;
+    z-index: 2;
+}
+
+/* Letter */
+.letter {
+    position: absolute;
+    width: 92%;
+    height: 85%;
+    background: white;
+    top: 10px;
+    left: 4%;
+    border-radius: 12px;
+    padding: 15px;
+    transform: translateY(110%);
+    transition: transform 1s ease;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.letter h2 {
+    color: #ff3e6c;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.letter p {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Glowing Text */
+.glow {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff1493;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #ff1493, 0 0 10px #ff69b4;
+    }
+    to {
+        text-shadow: 0 0 15px #ff1493, 0 0 25px #ff69b4;
+    }
+}
+
+/* Open animation */
+.envelope.open .flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+    transform: translateY(0);
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #ff3e6c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d6336c;
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+    .letter p {
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="envelope" id="envelope">
+        <div class="flap"></div>
+        <div class="letter">
+            <h2>To My Dear Wifeyyy Sudarshhh 🫂❤️</h2>
+            <p>
+            My love 🫂, every day with you feels like the most beautiful chapter of our life story. From the way we started to where we are now, every laugh, every small fight, every late-night talk has only made my heart choose you more and more. You are my peace, my happiness, my safe place, and my forever. I am always for youhhh babe lysssmmmm ummmmaahhhhhhhh no words to say loveee youhhhh loveeee youhhhh, plzzzz don't leave me babeee.
+            </p>
+
+            <div class="glow">
+                I LOVE YOU MY WIFEYYY 🫂❤️
+            </div>
+        </div>
+    </div>
+
+    <button onclick="openLetter()">Open My Heart 💌</button>
+</div>
+
+<script>
+function openLetter() {
+    document.getElementById("envelope").classList.toggle("open");
+}
+
+/* Falling Hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
